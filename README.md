@@ -13,7 +13,8 @@ So ensure you maintain a good and descriptive readme.ad file to facilitate other
 
 ### Common Git Commands
 
-........
+........................
+    
 $ git clone repoURL.git             ; Clones or download the repository.
 
 $ git add file name or git add . ; Git will start tracking all the changes that you made.
