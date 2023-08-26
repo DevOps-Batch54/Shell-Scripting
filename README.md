@@ -13,7 +13,7 @@ So ensure you maintain a good and descriptive readme.ad file to facilitate other
 
 ### Common Git Commands
 
-........................
+''''''''''''''
 
 $ git clone repoURL.git             ; Clones or download the repository.
 
@@ -27,7 +27,7 @@ $ git push      ; Pushes the changes that you've made to gitHub.
 $ git Pull      ; Be in the folder repository , This will pull all the changes.
 
 ### How to Authenticate from your local to GitHub ?
-........... 
+''''''''''''
 Github Authentication works based on PAT(Personal Access Token)
 Your Profile on GitHub-----> settings----->Developer Settings----->Generate Classic PAT
 When you do a git push, Gir prompts you to enter the PAT and that's it bingo. You're authencated.
