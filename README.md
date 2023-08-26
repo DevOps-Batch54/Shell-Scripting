@@ -15,7 +15,12 @@ So ensure you maintain a good and descriptive readme.ad file to facilitate other
 
 ........
 $ git clone repoURL.git             ; Clones or download the repository.
+
 $ git add file name or git add . ; Git will start tracking all the changes that you made.
-$ Git commit -m "Breif Message of your changes" ; Commit means, You are telling git to COMMIT / Save it.; You can only push the changes that ate commited.
-$ Git push      ; Pushes the changes that you've made to gitHub.
-$ Git Pull      ; Be in the folder repository , This will pull all the changes.
+
+$ git commit -m "Breif Message of your changes" ; Commit means, You are telling git to COMMIT / Save it.; 
+                                                    You can only push the changes that ate commited.
+
+$ git push      ; Pushes the changes that you've made to gitHub.
+
+$ git Pull      ; Be in the folder repository , This will pull all the changes.
