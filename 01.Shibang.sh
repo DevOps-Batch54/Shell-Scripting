@@ -5,3 +5,4 @@ echo Welcome To Linux OS..
 echo Welcome To Bash Scripting..
 echo -e "Line1\nLine2"
 echo -e "Line3\n\tLine4"
+echo -e "Line3\n\n\n\t\tLine4"
