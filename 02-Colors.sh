@@ -22,3 +22,7 @@
 # Eg: echo -e "\e[32mRed text\e[0m"
 
 echo -e "\e[32m Iam printing Green Color \e[0m"
+echo -e "\e[31m Iam printing Red Color \e[0m"
+echo -e "\e[33m Iam printing Yellow Color \e[0m"
+echo -e "\e[34m Iam printing Blue Color \e[0m"
+echo -e "\e[35m Iam printing Magenta Color \e[0m"
