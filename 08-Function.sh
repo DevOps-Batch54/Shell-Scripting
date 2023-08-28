@@ -8,7 +8,7 @@ Sample(){
 Status(){
     echo "Good Morning and todays date is $(date +%D)"
     echo -e "Good Morning and Todays Date is \e[34m $(date +%F) \e[0m"
-    echo "No Of Open Sessions \e[35m $(who --q) \e[0m"
+    echo "No Of Open Sessions \e[35m $(who -q) \e[0m"
 }
 #This is how you can call a function
 Sample 
