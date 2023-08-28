@@ -1,6 +1,6 @@
 #!bin/bash
 '''
-## Start of the line in any bash script should always be a SHEBANG NOTATION.
+# Start of the line in any bash script should always be a SHEBANG NOTATION.
 
 # Apart from the first line, none of the lines are considered as shebang.
 
