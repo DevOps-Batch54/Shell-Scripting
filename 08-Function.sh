@@ -2,6 +2,6 @@
 Sample(){
     echo "I am a sample function with sample"
     echo "I am executing sample function"
-    echo "Sample function completed"
+    echo -e "\e[35m Sample function completed \e[0m"
 }
 Sample
