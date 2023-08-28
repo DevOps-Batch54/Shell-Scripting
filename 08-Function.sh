@@ -3,6 +3,8 @@ Sample(){
     echo "I am a sample function with sample"
     echo "I am executing sample function"
     echo -e "\e[35m Sample function completed \e[0m"
+    echo "Calling Status function"
+    Status
 }
 
 Status(){
@@ -14,4 +16,3 @@ Status(){
 #This is how you can call a function
 Sample 
 #Calling status function
-Status
