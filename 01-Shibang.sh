@@ -1,5 +1,5 @@
 #!/bin/bash
-'''
+
 # Start of the line in any bash script should always be a SHEBANG NOTATION.
 
 # Apart from the first line, none of the lines are considered as shebang.
@@ -12,7 +12,7 @@
 
 # Now if you run the script, How system will come to know which interpretor it has to use,That where Shebang Notations hepls.
 
-'''
+
 
 echo Welcome To batch54 Cloud Devops Training..
 echo welcome To Cloud AWS..
