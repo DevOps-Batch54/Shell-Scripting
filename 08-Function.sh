@@ -4,3 +4,4 @@ Sample(){
     echo "I am executing sample function"
     echo "Sample function completed"
 }
+Sample
