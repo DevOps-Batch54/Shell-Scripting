@@ -1,4 +1,4 @@
-#!bin/bash
+#!/bin/bash
 '''
 # Start of the line in any bash script should always be a SHEBANG NOTATION.
 
