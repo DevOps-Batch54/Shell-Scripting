@@ -16,4 +16,3 @@ Status(){
 #This is how you can call a function
 Sample 
 #Calling status function
-Status
