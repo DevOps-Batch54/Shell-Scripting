@@ -1,4 +1,4 @@
-#!?bin/bash
+#!/bin/bash
 echo "This is to demonstrate the usage of single line and multi line comments"
 
 a=10
