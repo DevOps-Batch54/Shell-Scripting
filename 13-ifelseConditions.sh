@@ -31,5 +31,6 @@ elif [ "$ACTION" == "Enable" ]; then
         exit 3
 else 
         echo -e "\e[35m Available Option is Start----Restart----Stop----Enable only \e[0m"
+        echo -e "\e[36m expected usage is \n : bash $0 start  \e[0m"
         exit 4
 fi
