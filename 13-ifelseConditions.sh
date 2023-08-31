@@ -1,6 +1,6 @@
 #!/bin/bash
 #Simple if
-ACTION=$1
+ACTION=start
 if ["$ACTION" == "start"]; then
         echo -e "\e[32m Starting The RabbitMQ Services \e[0m"
         exit 0
