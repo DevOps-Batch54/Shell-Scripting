@@ -8,7 +8,7 @@ else
     echo "Value of a is not declared"
 fi
 
-if [ -z. "$var"] ; then
+if [ -z "$var"] ; then
     echo "Value of b is declared"
 else
     echo "Value of b is not declared"
