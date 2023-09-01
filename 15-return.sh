@@ -4,9 +4,9 @@ sample(){
 
 }
 stat(){
-echo " \t total no.of sessions $(who | wc -l)"
+echo -e " \t total no.of sessions $(who | wc -l)"
 echo " todays Date is $(date +%F)"
-echo "\t stat function completed"
+echo -e "\t stat function completed"
 echo " Calling sample function"
 # exit 2
 return
