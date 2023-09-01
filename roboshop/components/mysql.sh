@@ -1,2 +1,2 @@
 #!/bin/bash
-echo "I am MySql'
+echo "I am MySql"
