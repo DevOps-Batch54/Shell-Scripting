@@ -1,9 +1,9 @@
 #!/bin/bash
 
-echo $0   #o/p: wrapper.sh
+#echo $0   #o/p: wrapper.sh
 bash components/$1.sh 
-bash components/$2.sh
-bash components/$3.sh 
+# bash components/$2.sh
+# bash components/$3.sh 
 
 #bash wrapper.sh catalogue mongodb frontend
 #o/p: 
