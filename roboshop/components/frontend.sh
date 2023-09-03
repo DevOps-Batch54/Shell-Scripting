@@ -6,7 +6,7 @@ echo -e "\e[31m This script is expected to be run by a root user or with a sudo 
 exit 1;
 fi
 echo "Installing Nginx"
-yum install mginx -y
+yum install nginx -y
 
 #It's always a great idea to preform validation before you get an exception.
 #if the script is exectuted as a root user or a sudo user, then it as to proceed.
