@@ -44,5 +44,5 @@ cd /home/$APPUSER/$COMPONENT
 npm install -y &>> LOGFILE
 stat $?
 echo -n "Update the mongodb IP address:"
-sed -i -e 's/MONGO_DNSNAME/172.31.93.104/' /home/$APPUSER/$COMPONENT-main/systemd.services
+sed -i -e 's/MONGO_DNSNAME/172.31.93.104/' /home/$APPUSER/$COMPONENT-main/systemd.service
 stat $?
