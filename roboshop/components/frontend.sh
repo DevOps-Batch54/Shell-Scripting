@@ -35,9 +35,9 @@ rm -rf ${COMPONENT}-main README.md
 mv localhost.conf /etc/nginx/default.d/roboshop.conf 
 stat $?
 
-echo -n"update the backend component reverseproxy details"
+echo -n "update the backend component reverseproxy details"
 for component in catalogue ; do 
-sed -i -e '$COMPONENT/s/localhost/$COMPONENT.roboshop.internal/' /etc/nginx/default.d/roboshop.conf
+sed -i -e "$COMPONENT/s/localhost/$COMPONENT.roboshop.internal/" /etc/nginx/default.d/roboshop.conf
 done
 stat $?
 
