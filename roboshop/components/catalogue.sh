@@ -42,7 +42,9 @@ stat $?
 echo -n "Modifying the ownership :"
 mv $COMPONENT-main $COMPONENT &>> LOGFILE
 chown -R $APPUSER:$APPUSER /home/$APPUSER/$COMPONENT                        
-#cd /home/$APPUSER/$COMPONENT
+
+echo -n "Generating npm $COMPONENT artifacts :"
+cd /home/$APPUSER/$COMPONENT
 npm install -y &>> LOGFILE
 stat $?
 
