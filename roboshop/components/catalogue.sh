@@ -16,7 +16,7 @@ if [ $1 -eq 0 ] ; then
     exit 2;
 fi
 }
-echo -e "*******/e[32m Catalogue installation started \e[0m*******"
+echo -e "*******\e[32m Catalogue installation started \e[0m*******"
 echo -n "Download the nodesource"
 curl --silent --location https://rpm.nodesource.com/setup_16.x | sudo bash - &>> LOGFILE
 #yum install nodejs -y &>> LOGFILE
