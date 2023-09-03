@@ -8,7 +8,11 @@ exit 1;
 fi
 echo "Installing Nginx"
 yum install nginx -y &>> "/tmp/${COMPONENT}.log"
-
+if [ $? -eq 0 ] ; then 
+    echo -e "\e[32m Success \e[0m"
+        else
+    echo -e "\e[31m Failure \e[0m"
+fi
 #It's always a great idea to preform validation before you get an exception.
 #if the script is exectuted as a root user or a sudo user, then it as to proceed.
 #if not, I was to exit the script with some nice message.
