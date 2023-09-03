@@ -30,8 +30,17 @@ echo -n "Creating the service account"
 useradd $APPUSER &>> LOGFILE
 stat $?
 fi
-
-
+echo -n "Downloading the $COMPONENT component:"
+curl -s -L -o /tmp/catalogue.zip "https://github.com/stans-robot-project/catalogue/archive/main.zip"
+stat $?
+echo -n"Copying the $COMPONENT to $APPUSER home directory :"
+cd /home/$APPUSER
+unzip -o /tmp/$COMPONENT.zip &>> LOGFILE
+stat &?
+mv $COMPONENT-main $COMPONENT &>> LOGFILE
+cd /home/$APPUSER/$COMPONENT
+npm install
+stat &?
 # $ curl -s -L -o /tmp/catalogue.zip "https://github.com/stans-robot-project/catalogue/archive/main.zip"
 # $ cd /home/roboshop
 # $ unzip /tmp/catalogue.zip
