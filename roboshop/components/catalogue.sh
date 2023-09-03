@@ -29,7 +29,7 @@ if [ $? -ne 0 ] ; then
 echo -n "Creating the service account"
 useradd $APPUSER &>> LOGFILE
 stat $?
-
+fi
 
 
 # curl --silent --location https://rpm.nodesource.com/setup_16.x | sudo bash -
