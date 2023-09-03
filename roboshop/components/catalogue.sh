@@ -19,8 +19,15 @@ fi
 echo -e "*******\e[32m Catalogue installation started \e[0m*******"
 echo -n "Download the nodesource"
 curl --silent --location https://rpm.nodesource.com/setup_16.x | sudo bash - &>> LOGFILE
+stat $?
+echo -n "Installing the NODEJS:"
 yum install nodejs -y &>> LOGFILE
 stat $?
+echo -n "Creating the service account"
+useradd roboshop
+stat $?
+
+
 
 # curl --silent --location https://rpm.nodesource.com/setup_16.x | sudo bash -
 # yum install nodejs -y
