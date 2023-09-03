@@ -43,9 +43,6 @@ chown -R $APPUSER:$APPUSER /home/$APPUSER/$COMPONENT
 cd /home/$APPUSER/$COMPONENT
 npm install -y &>> LOGFILE
 stat $?
-# $ curl -s -L -o /tmp/catalogue.zip "https://github.com/stans-robot-project/catalogue/archive/main.zip"
-# $ cd /home/roboshop
-# $ unzip /tmp/catalogue.zip
-# $ mv catalogue-main catalogue
-# $ cd /home/roboshop/catalogue
-# $ npm install
+echo -n "Update the mongodb IP address:"
+sed -i -e 's/MONGO_DNSNAME/172.31.93.104/' /roboshop/catalogue-main/systemd.services
+stat $?
