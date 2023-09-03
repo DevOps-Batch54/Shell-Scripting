@@ -1,12 +1,13 @@
 #!/bin/bash
 #echo "I am Frontend"
+COMPONENT=frontend
 ID=$(id -u)
 if [ $ID -ne 0 ] ; then
 echo -e "\e[31m This script is expected to be run by a root user or with a sudo previlage \e[0m"
 exit 1;
 fi
 echo "Installing Nginx"
-yum install nginx -y
+yum install nginx -y &>> "/tmp/${COMPONENT}.log"
 
 #It's always a great idea to preform validation before you get an exception.
 #if the script is exectuted as a root user or a sudo user, then it as to proceed.
