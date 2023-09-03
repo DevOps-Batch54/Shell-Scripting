@@ -16,6 +16,7 @@ if [ $1 -eq 0 ] ; then
     exit 2;
 fi
 }
+echo -e "*******\e[32m $COMPONENT installation is started \e[0m*******"
 echo -n "Configuring the $mongodb repo"
 curl -s -o /etc/yum.repos.d/mongodb.repo https://raw.githubusercontent.com/stans-robot-project/mongodb/main/mongo.repo
 stat $?
