@@ -48,4 +48,4 @@ cd $COMPONENT-main
 mongo < catalogue.js &>> LOGFILE
 mongo < users.js &>> LOGFILE
 stat $?
-echo -n "\e[32$COMPONENT installation is completed \e[0m"
+echo -n "*******\e[32$COMPONENT installation is completed \e[0m*******"
