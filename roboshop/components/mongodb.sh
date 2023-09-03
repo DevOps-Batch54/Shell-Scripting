@@ -38,7 +38,7 @@ stat $?
 echo -n "Download the Schema of $COMPONENT"
 curl -s -L -o /tmp/mongodb.zip "https://github.com/stans-robot-project/mongodb/archive/main.zip"
 stat $?
-echo -n "Extracting the $COMPONENT scheme:"
+echo -n "Extracting the $COMPONENT schema:"
 cd /tmp
 unzip -o mongodb.zip &>> LOGFILE
 stat $?
