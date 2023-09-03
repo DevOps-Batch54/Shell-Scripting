@@ -25,7 +25,7 @@ stat $?
 echo -n "starting $mongodb"
 systemctl enable mongod &>> LOGFILE
 systemctl start mongod &>> LOGFILE
-
+stat $?
 
 
 
