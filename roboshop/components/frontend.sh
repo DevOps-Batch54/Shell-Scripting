@@ -27,7 +27,7 @@ rm -rf * &>> "/tmp/${COMPONENT}.log"
 stat $?
 
 echo -n "Extractting the ${COMPONENT} component"
-unzip /tmp/${COMPONENT}.zip
+unzip /tmp/${COMPONENT}.zip &>> "/tmp/${COMPONENT}.log"
 mv ${COMPONENT}-main/* . &>> "/tmp/${COMPONENT}.log"
 mv static/* . &>> "/tmp/${COMPONENT}.log"
 rm -rf ${COMPONENT}-main README.md &>> "/tmp/${COMPONENT}.log"
