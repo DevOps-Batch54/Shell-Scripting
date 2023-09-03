@@ -22,27 +22,33 @@ stat $?
 echo -n "Installing $COMPONENT"
 yum install -y mongodb-org &>> LOGFILE
 stat $?
-echo -n "starting $COMPONENT"
-systemctl enable mongod &>> LOGFILE
-systemctl start mongod &>> LOGFILE
-stat $?
+# echo -n "starting $COMPONENT"
+# systemctl enable mongod &>> LOGFILE
+# systemctl start mongod &>> LOGFILE
+# stat $?
 echo -n "Enabling the DB Visibility:"
 sed -i -e 's/127.0.0.1/0.0.0.0/' /etc/mongod.conf
 stat $?
-echo -n "Restarting $COMPONENT"
+echo -n "Starting $COMPONENT"
 systemctl daemon-reload mongod &>> LOGFILE
 systemctl enable mongod &>> LOGFILE
 systemctl restart mongod &>> LOGFILE
 stat $?
 
+echo -n "Download the Schema of $COMPONENT"
+curl -s -L -o /tmp/mongodb.zip "https://github.com/stans-robot-project/mongodb/archive/main.zip"
+stat $?
+echo -n "Extracting the $COMPONENT scheme:"
+cd /tmp
+unzip mongodb.zip &>> LOGFILE
+stat $?
 
-
-# # yum install -y mongodb-org
-# # systemctl enable mongod
-# # systemctl start mongod
-
-# ```
-
-# 1. Update Listen IP address from 127.0.0.1 to 0.0.0.0 in the config file, so that MongoDB can be accessed by other services.
-
-# Config file:   `# vim /etc/mongod.conf`
+echo -n "Injecting the schema:"
+cd $COMPONENT-main
+mongo < catalogue.js
+mongo < users.js
+stat $?
+# curl -s -L -o /tmp/mongodb.zip "https://github.com/stans-robot-project/mongodb/archive/main.zip"
+# cd mongodb-main
+# mongo < catalogue.js
+# mongo < users.js
