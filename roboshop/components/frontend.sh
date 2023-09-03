@@ -26,6 +26,14 @@ cd /usr/share/nginx/html
 rm -rf * &>> "/tmp/${COMPONENT}.log"
 stat $?
 
+echo -n "Extractting the ${COMPONENT} component"
+unzip /tmp/${COMPONENT}.zip
+mv ${COMPONENT}-main/* . &>> "/tmp/${COMPONENT}.log"
+mv static/* . &>> "/tmp/${COMPONENT}.log"
+rm -rf ${COMPONENT}-main README.md
+mv localhost.conf /etc/nginx/default.d/roboshop.conf
+stat $?
+
 # cd /usr/share/nginx/html
 # rm -rf *
 # unzip /tmp/frontend.zip
