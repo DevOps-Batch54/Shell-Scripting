@@ -35,39 +35,13 @@ rm -rf ${COMPONENT}-main README.md
 mv localhost.conf /etc/nginx/default.d/roboshop.conf 
 stat $?
 
+for component in catalogue ; do 
+sed -i -e "$COMPONENT/s/localhost/$COMPONENT.roboshop.internal/" /etc/nginx/default.d/roboshop.conf
+done
+
 echo -n "Start the $COMPONENT service:"
+systemctl daemon-reload 
 systemctl enable nginx
 systemctl start nginx
 stat $?
 
-# cd /usr/share/nginx/html
-# rm -rf *
-# unzip /tmp/frontend.zip
-# mv frontend-main/* .
-# mv static/* .
-# rm -rf frontend-main README.md
-# mv localhost.conf /etc/nginx/default.d/roboshop.conf
-
-#It's always a great idea to preform validation before you get an exception.
-#if the script is exectuted as a root user or a sudo user, then it as to proceed.
-#if not, I was to exit the script with some nice message.
-
-# The frontend is the service in RobotShop to serve the web content over Nginx.
-
-# Install Nginx.
-
-# ```
-# # yum install nginx -y
-# # systemctl enable nginx
-# # systemctl start nginx
-
-# ```
-
-# Let's download the HTDOCS content and deploy it under the Nginx path.
-
-# ```
-# # curl -s -L -o /tmp/frontend.zip "https://github.com/stans-robot-project/frontend/archive/main.zip"
-
-# ```
-
-# Deploy in Nginx Default Location.
