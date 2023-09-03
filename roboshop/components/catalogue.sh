@@ -52,13 +52,10 @@ stat $?
 
 echo -n "Update the mongodb IP address:"
 sed -i -e 's/MONGO_DNSNAME/mongodb.roboshop.internal/' /home/$APPUSER/$COMPONENT/systemd.service
-stat $?
-echo -n "update the systemd file as $COMPONENT file"
-#chown -R /home/$APPUSER/$COMPONENT $APPUSER:$APPUSER 
 mv /home/$APPUSER/$COMPONENT/systemd.service /etc/systemd/system/$COMPONENT.service
 stat $?
 echo -n "Start the $COMPONENT"
 systemctl daemon-reload &>> LOGFILE
 systemctl enable $COMPONENT &>> LOGFILE
-systemctl restatus $COMPONENT &>> LOGFILE
+systemctl restart $COMPONENT &>> LOGFILE
 stat $?
