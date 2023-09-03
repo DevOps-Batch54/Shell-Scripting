@@ -27,7 +27,7 @@ stat $?
 id $APPUSER
 if [ $? -ne 0 ] ; then
 echo -n "Creating the service account"
-useradd $APPUSER
+useradd $APPUSER &>> LOGFILE
 stat $?
 
 
