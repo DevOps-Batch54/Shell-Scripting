@@ -37,7 +37,7 @@ stat $?
 
 echo -n "update the backend component reverseproxy details"
 for component in catalogue ; do 
-sed -i -e "$component/s/localhost/$component.roboshop.internal/" /etc/nginx/default.d/roboshop.conf
+sed -i -e "/$component/s/localhost/$component.roboshop.internal/" /etc/nginx/default.d/roboshop.conf
 done
 stat $?
 
