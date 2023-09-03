@@ -2,6 +2,7 @@
 #echo "I am Catalogue"
 COMPONENT=catalogue
 LOGFILE="/tmp/${COMPONENT}.log"
+APPUSER="roboshop"
 ID=$(id -u)
 if [ $ID -ne 0 ] ; then
     echo -e "\e[31m This script is expected to be run by a root user or with a sudo previlage \e[0m"
@@ -17,14 +18,16 @@ if [ $1 -eq 0 ] ; then
 fi
 }
 echo -e "*******\e[32m Catalogue installation started \e[0m*******"
-echo -n "Download the nodesource"
+echo -n "Configure the $COMPONENT repo "
 curl --silent --location https://rpm.nodesource.com/setup_16.x | sudo bash - &>> LOGFILE
 stat $?
 echo -n "Installing the NODEJS:"
 yum install nodejs -y &>> LOGFILE
 stat $?
+id $APPUSER
+if [ $? -ne 0 ] ; then
 echo -n "Creating the service account"
-useradd roboshop
+useradd $APPUSER
 stat $?
 
 
