@@ -39,7 +39,7 @@ unzip -o /tmp/$COMPONENT.zip &>> LOGFILE
 stat $?
 echo -n "Modifying the ownership :"
 mv $COMPONENT-main $COMPONENT &>> LOGFILE
-chwon -R $APPUSER:$APPUSER /home/$APPUSER/$COMPONENT                        
+chown -R $APPUSER:$APPUSER /home/$APPUSER/$COMPONENT                        
 cd /home/$APPUSER/$COMPONENT
 npm install -y &>> LOGFILE
 stat $?
