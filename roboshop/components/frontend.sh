@@ -20,7 +20,22 @@ if [ $? -eq 0 ] ; then
 else
     echo -e "\e[31m Failure \e[0m"
 fi
+echo -n "Performing Cleanup :"
+cd /usr/share/nginx/html
+rm -rf * &>> "/tmp/${COMPONENT}.log"
+if [ $? -eq 0 ] ; then
+    echo -e "\e[32m Success \e[0m"
+else
+    echo -e "\e[31m Failure \e[0m"
+fi
 
+# cd /usr/share/nginx/html
+# rm -rf *
+# unzip /tmp/frontend.zip
+# mv frontend-main/* .
+# mv static/* .
+# rm -rf frontend-main README.md
+# mv localhost.conf /etc/nginx/default.d/roboshop.conf
 
 #It's always a great idea to preform validation before you get an exception.
 #if the script is exectuted as a root user or a sudo user, then it as to proceed.
