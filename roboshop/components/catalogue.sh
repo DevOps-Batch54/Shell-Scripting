@@ -47,7 +47,11 @@ echo -n "Update the mongodb IP address:"
 sed -i -e 's/MONGO_DNSNAME/172.31.93.104/' /home/$APPUSER/$COMPONENT-main/systemd.service
 stat $?
 echo -n "update the systemd file as $COMPONENT file"
+chown -R /home/$APPUSER/$COMPONENT $APPUSER:$APPUSER 
 mv /home/$APPUSER/$COMPONENT/systemd.service /etc/systemd/system/$COMPONENT.service
+
+
+
 stat $?
 echo -n "Start the $COMPONENT"
 systemctl daemon-reload $COMPONENT
