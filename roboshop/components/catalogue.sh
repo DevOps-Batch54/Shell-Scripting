@@ -36,13 +36,13 @@ stat $?
 echo -n "Copying the $COMPONENT to $APPUSER home directory :"
 cd /home/$APPUSER
 unzip -o /tmp/$COMPONENT.zip &>> LOGFILE
-stat &?
+stat $?
 echo -n "Modifying the ownership :"
 mv $COMPONENT-main $COMPONENT &>> LOGFILE
 chwon -R $APPUSER:$APPUSER /home/$APPUSER/$COMPONENT                        
 cd /home/$APPUSER/$COMPONENT
 npm install -y &>> LOGFILE
-stat &?
+stat $?
 # $ curl -s -L -o /tmp/catalogue.zip "https://github.com/stans-robot-project/catalogue/archive/main.zip"
 # $ cd /home/roboshop
 # $ unzip /tmp/catalogue.zip
