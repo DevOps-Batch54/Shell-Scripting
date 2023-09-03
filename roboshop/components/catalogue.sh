@@ -38,12 +38,16 @@ cd /home/$APPUSER
 rm -rf $COMPONENT &>> LOGFILE
 unzip -o /tmp/$COMPONENT.zip &>> LOGFILE
 stat $?
+
 echo -n "Modifying the ownership :"
 mv $COMPONENT-main $COMPONENT &>> LOGFILE
 chown -R $APPUSER:$APPUSER /home/$APPUSER/$COMPONENT                        
-cd /home/$APPUSER/$COMPONENT
+#cd /home/$APPUSER/$COMPONENT
 npm install -y &>> LOGFILE
 stat $?
+
+
+
 echo -n "Update the mongodb IP address:"
 sed -i -e 's/MONGO_DNSNAME/mongodb.roboshop.internal/' /home/$APPUSER/$COMPONENT/systemd.service
 stat $?
