@@ -29,9 +29,10 @@ stat $?
 echo -n "Enabling the DB Visibility:"
 sed -i -e 's/127.0.0.1/0.0.0.0/' /etc/mongod.conf
 stat $?
-echo -n "starting $COMPONENT"
+echo -n "Restarting $COMPONENT"
+systemctl daemon-reload mongod
 systemctl enable mongod &>> LOGFILE
-systemctl start mongod &>> LOGFILE
+systemctl restart mongod &>> LOGFILE
 stat $?
 
 
