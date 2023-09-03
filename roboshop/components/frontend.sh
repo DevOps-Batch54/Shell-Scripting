@@ -13,8 +13,8 @@ if [ $? -eq 0 ] ; then
         else
     echo -e "\e[31m Failure \e[0m"
 fi
-echo -n "Downloading the frontend component"
-curl -s -L -o /tmp/frontend.zip "https://github.com/stans-robot-project/frontend/archive/main.zip"
+echo -n "Downloading the ${COMPONENT} component"
+curl -s -L -o /tmp/${COMPONENT}.zip "https://github.com/stans-robot-project/${COMPONENT}/archive/main.zip"
 if [ $? -eq 0 ] ; then
     echo -e "\e[33m Success \e[0m"
 else
