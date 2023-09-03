@@ -42,8 +42,6 @@ stat $?
 echo -n "Modifying the ownership :"
 mv $COMPONENT-main $COMPONENT &>> LOGFILE
 chown -R $APPUSER:$APPUSER /home/$APPUSER/$COMPONENT                        
-
-echo -n "Generating npm $COMPONENT artifacts :"
 cd /home/$APPUSER/$COMPONENT
 npm install -y &>> LOGFILE
 stat $?
@@ -52,6 +50,9 @@ stat $?
 
 echo -n "Update the mongodb IP address:"
 sed -i -e 's/MONGO_DNSNAME/mongodb.roboshop.internal/' /home/$APPUSER/$COMPONENT/systemd.service
+stat $?
+echo -n "update the systemd file as $COMPONENT file"
+#chown -R /home/$APPUSER/$COMPONENT $APPUSER:$APPUSER 
 mv /home/$APPUSER/$COMPONENT/systemd.service /etc/systemd/system/$COMPONENT.service
 stat $?
 echo -n "Start the $COMPONENT"
