@@ -54,7 +54,7 @@ NPM_INSTALL(){
 CONFIGURE_SERVICE(){
 
         echo -n "Update the mongodb IP address:"
-        sed -i -e 's/MONGO_ENDPOINT/mongodb.roboshop.internal/' -e 's/REDIS_ENDPOINT/redis.roboshop.internal/' -e 's/REDIS_ENDPOINT/redis.roboshop.internal/' -e 's/CATALOGUE_ENDPOINT/catalogue.roboshop.internal/' -e 's/MONGO_DNSNAME/mongodb.roboshop.internal/' /home/$APPUSER/$COMPONENT/systemd.service
+        sed -i -e 's/REDIS_ENDPOINT/redis.roboshop.internal/' -e 's/CATALOGUE_ENDPOINT/catalogue.roboshop.internal/' -e 's/MONGO_DNSNAME/mongodb.roboshop.internal/' /home/$APPUSER/$COMPONENT/systemd.service
         stat $?
         echo -n "update the systemd file as $COMPONENT file"
         #chown -R /home/$APPUSER/$COMPONENT $APPUSER:$APPUSER 
