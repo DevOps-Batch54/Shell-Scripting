@@ -29,3 +29,18 @@ chown -R $APPUSER:$APPUSER /home/$APPUSER/$COMPONENT
 cd /home/$APPUSER/$COMPONENT
 npm install -y &>> LOGFILE
 stat $?
+
+echo -n "Update the mongodb IP address:"
+sed -i -e 's/REDIS_ENDPOINT/redis.roboshop.internal/' /home/$APPUSER/$COMPONENT/systemd.service
+sed -i -e 's/CATALOGUE_ENDPOINT/catalogue.roboshop.internal/' /home/$APPUSER/$COMPONENT/systemd.service
+stat $?
+echo -n "update the systemd file as $COMPONENT file"
+#chown -R /home/$APPUSER/$COMPONENT $APPUSER:$APPUSER 
+mv /home/$APPUSER/$COMPONENT/systemd.service /etc/systemd/system/$COMPONENT.service
+stat $?
+echo -n "Start the $COMPONENT"
+systemctl daemon-reload &>> LOGFILE
+systemctl enable $COMPONENT &>> LOGFILE
+systemctl restart $COMPONENT &>> LOGFILE
+systemctl status cart -l
+stat $?
