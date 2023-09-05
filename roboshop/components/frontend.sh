@@ -31,7 +31,7 @@ done
 stat $?
 
 echo -n "Start the $COMPONENT service:"
-systemctl daemon-reload 
+systemctl daemon-reload &>> LOGFILE
 systemctl enable nginx
 systemctl start nginx
 stat $?
