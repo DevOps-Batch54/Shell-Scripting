@@ -4,7 +4,7 @@ COMPONENT=redis
 source components/common.sh
 
 echo -n "Download the $COMPONENT repo"
-curl -L -O https://raw.githubusercontent.com/stans-robot-project/redis/main/redis.repo -o /etc/yum.repos.d/redis.repo
+curl -O -L https://raw.githubusercontent.com/stans-robot-project/redis/main/redis.repo -o /etc/yum.repos.d/redis.repo
 #yum install redis-6.2.13 -y &>> LOGFILE
 stat $?
 
