@@ -31,8 +31,8 @@ npm install -y &>> LOGFILE
 stat $?
 
 echo -n "Update the Redis & Catalogue IP address:"
-sed -i -e 's/REDIS_ENDPOINT/redis.roboshop.internal/' /home/$APPUSER/$COMPONENT/systemd.service
-sed -i -e 's/CATALOGUE_ENDPOINT/catalogue.roboshop.internal/' /home/$APPUSER/$COMPONENT/systemd.service
+sed -i -e 's/REDIS_ENDPOINT/redis.roboshop.internal/' /home/$APPUSER/$COMPONENT
+sed -i -e 's/CATALOGUE_ENDPOINT/catalogue.roboshop.internal/' /home/$APPUSER/$COMPONENT
 stat $?
 echo -n "update the systemd file as $COMPONENT file"
 #chown -R /home/$APPUSER/$COMPONENT $APPUSER:$APPUSER 
