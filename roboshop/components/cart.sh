@@ -3,17 +3,10 @@ COMPONENT=cart
 source components/common.sh
 
 echo -n "Configure the $COMPONENT repo "
-curl --silent --location https://rpm.nodesource.com/setup_16.x | sudo bash - &>> LOGFILE
-stat $?
-echo -n "Installing the NODEJS:"
-yum install nodejs -y &>> LOGFILE
-stat $?
-id $APPUSER &>> LOGFILE
-if [ $? -ne 0 ] ; then
-echo -n "Creating the service account"
-useradd $APPUSER &>> LOGFILE
-stat $?
-fi
+NODEJS
+
+CREATE_USER
+
 echo -n "Downloading the $COMPONENT component:"
 curl -s -L -o /tmp/cart.zip "https://github.com/stans-robot-project/cart/archive/main.zip"
 stat $?
@@ -31,7 +24,8 @@ npm install -y &>> LOGFILE
 stat $?
 
 echo -n "Update the Redis & Catalogue IP address:"
-sed -i -e 's/REDIS_ENDPOINT/redis.roboshop.internal/' -e 's/CATALOGUE_ENDPOINT/catalogue.roboshop.internal/' /home/$APPUSER/$COMPONENT
+sed -i -e 's/REDIS_ENDPOINT/redis.roboshop.internal/' /home/$APPUSER/$COMPONENT/systemd.service
+sed -i -e 's/CATALOGUE_ENDPOINT/catalogue.roboshop.internal/' /home/$APPUSER/$COMPONENT/systemd.service
 stat $?
 echo -n "update the systemd file as $COMPONENT file"
 #chown -R /home/$APPUSER/$COMPONENT $APPUSER:$APPUSER 
