@@ -6,8 +6,7 @@ curl -L https://raw.githubusercontent.com/stans-robot-project/redis/main/redis.r
 yum install redis-6.2.13 -y &>> LOGFILE
 stat $?
 sed -i -e 's/bind 127.0.0.1 -/bind 0.0.0.0 -/' /etc/redis.conf
-
-
-# systemctl enable redis
-# systemctl start redis
-# systemctl status redis -l
+systemctl enable redis &>> LOGFILE
+systemctl start redis &>> LOGFILE
+systemctl status redis -l
+stat $?
