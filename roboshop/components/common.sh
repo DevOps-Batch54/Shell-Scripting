@@ -15,3 +15,21 @@ if [ $1 -eq 0 ] ; then
     exit 2;
 fi
 }
+
+CREATE_USER(){
+    id $APPUSER &>> LOGFILE
+if [ $? -ne 0 ] ; then
+echo -n "Creating the service account"
+useradd $APPUSER &>> LOGFILE
+stat $?
+fi
+}
+
+NODEJS(){
+        echo -n "Configure the $COMPONENT repo "
+        curl --silent --location https://rpm.nodesource.com/setup_16.x | sudo bash - &>> LOGFILE
+        stat $?
+        echo -n "Installing the NODEJS:"
+        yum install nodejs -y &>> LOGFILE
+        stat $?
+}
