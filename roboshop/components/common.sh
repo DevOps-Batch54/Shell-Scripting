@@ -79,4 +79,5 @@ NODEJS(){
         CREATE_USER            #calling create user function to create the roboshop user account
         DOWNLOAD_AND_EXTRACT    # calling DOWNLOAD_AND_EXTRACT function to download the content
         NPM_INSTALL             # calling NPM_INSTALL function to creates artifactory
+        CONFIGURE_SERVICE       # Configure the service
 }
