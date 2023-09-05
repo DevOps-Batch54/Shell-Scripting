@@ -8,6 +8,10 @@ curl -L https://raw.githubusercontent.com/stans-robot-project/redis/main/redis.r
 yum install redis-6.2.13 -y &>> LOGFILE
 stat $?
 
+echo -n "Enabling the DB Visibility:"
+sed -i -e 's/bind 127.0.0.1 -/0.0.0.0 -/' /etc/redis.conf
+stat $?
+
 # vim /etc/redis.conf
 # vim /etc/redis/redis.conf
 
