@@ -30,7 +30,7 @@ cd /home/$APPUSER/$COMPONENT
 npm install -y &>> LOGFILE
 stat $?
 
-echo -n "Update the mongodb IP address:"
+echo -n "Update the Redis & Catalogue IP address:"
 sed -i -e 's/REDIS_ENDPOINT/redis.roboshop.internal/' /home/$APPUSER/$COMPONENT/systemd.service
 sed -i -e 's/CATALOGUE_ENDPOINT/catalogue.roboshop.internal/' /home/$APPUSER/$COMPONENT/systemd.service
 stat $?
