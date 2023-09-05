@@ -20,7 +20,7 @@ curl -s -L -o /tmp/catalogue.zip "https://github.com/stans-robot-project/user/ar
 stat $?
 echo -n "Copying the $COMPONENT to $APPUSER home directory :"
 cd /home/$APPUSER
-rm -rf $COMPONENT &>> LOGFILE
+#rm -rf $COMPONENT &>> LOGFILE
 unzip -o /tmp/$COMPONENT.zip &>> LOGFILE
 stat $?
 
@@ -31,5 +31,22 @@ cd /home/$APPUSER/$COMPONENT
 npm install -y &>> LOGFILE
 stat $?
 
+# echo -n "Update the redis & mongodb IP address:"
+# sed -i -e 's/MONGO_DNSNAME/mongodb.roboshop.internal/' /home/$APPUSER/$COMPONENT/systemd.service
+# sed -i -e 's/MONGO_DNSNAME/mongodb.roboshop.internal/' /home/$APPUSER/$COMPONENT/systemd.service
+# stat $?
+# echo -n "update the systemd file as $COMPONENT file"
+# #chown -R /home/$APPUSER/$COMPONENT $APPUSER:$APPUSER 
+# mv /home/$APPUSER/$COMPONENT/systemd.service /etc/systemd/system/$COMPONENT.service
+# stat $?
+# echo -n "Start the $COMPONENT"
+# systemctl daemon-reload &>> LOGFILE
+# systemctl enable $COMPONENT &>> LOGFILE
+# systemctl restart $COMPONENT &>> LOGFILE
+# stat $?
 
+# $ vim /home/roboshop/user/systemd.service
+
+# Update `REDIS_ENDPOINT` with Redis Server IP
+# Update `MONGO_ENDPOINT` with MongoDB Server IP
 
